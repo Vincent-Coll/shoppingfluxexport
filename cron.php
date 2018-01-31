@@ -62,6 +62,9 @@ $configurationKey = empty($lang) ? 'PS_SHOPPINGFLUX_CRON_TIME' : 'PS_SHOPPINGFLU
 $last_executed = Configuration::get($configurationKey, $idLang, null, $id_shop);
 
 $today = date('Y-m-d H:i:s');
+$configurationKey = empty($lang) ? 'PS_SHOPPINGFLUX_CRON_TIME' : 'PS_SHOPPINGFLUX_CRON_TIME' . $lang;
+$last_executed = Configuration::get($configurationKey, $idLang, null, $id_shop);
+
 if (empty($last_executed) || ($last_executed == '0')) {
     $last_executed = 0;
 }
